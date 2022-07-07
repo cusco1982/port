@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React, { Component } from 'react';
+import { BrowserRouter as Routes, Route, Switch } from 'react-router-dom';
 
+// import Toolbar from './components/Toolbar/Toolbar';
+// import Footer from "./components/Footer";
+
+import Landing from "./pages/Landing.js";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+
+
+
+
+class App extends Component {
+
+  render() {
+
+    return (
+
+      <div>
+
+        {/* <Toolbar /> */}
+
+        <Routes>
+
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/projects" component={Projects} />
+
+        </Routes>
+
+        {/* <Footer /> */}
+
+
+
+
+      </div>
+
+    );
+  }
+}
 export default App;
